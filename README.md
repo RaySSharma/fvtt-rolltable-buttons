@@ -1,8 +1,8 @@
 ## RollTable Buttons
 
 * **Author:** RaySSharma#4736
-* **Version:** 1.1.4
-* **Foundry VTT Compatibility:** 0.6.0+
+* **Version:** 1.1.6
+* **Foundry VTT Compatibility:** 0.7.5+
 * **Module Requirement(s):** None
 * **Module Conflicts:** None
 * **Translation Support**: en
@@ -94,7 +94,7 @@ This module adds a convenient way to draw from RollTables. Great for critical hi
 * Added support for changes to rolling methods in FVTT 0.5.6
 * Fixed handling of permissions (thanks to DoubleR#1944).
 * Updated rolling mechanism to account for API changes
-* Moved up requirements to FVTT 0.6.0
+* Moved up requirements to FVTT 0.7.5
 
 ### License
 
