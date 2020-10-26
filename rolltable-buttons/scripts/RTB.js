@@ -168,16 +168,17 @@ class RTBControl {
      * @memberof RTB
      */
     static addChatControl() {
-        const chatControlLeft = document.getElementsByClassName("chat-control-icon")[0];
+        const chatControl = document.getElementById("chat-controls");
         let tableNode = document.getElementById("RTB-button");
 
-        if (chatControlLeft && !tableNode) {
-            const chatControlLeftNode = chatControlLeft;
+        if (chatControl && !tableNode) {
+            const chatControlSecondChild = chatControl.children[1];
 
             tableNode = document.createElement("label");
+            tableNode.setAttribute("class", "RTB-control-icon")
             tableNode.innerHTML = `<i id="RTB-button" class="fas fa-bullseye"></i>`;
             tableNode.onclick = RTBControl.initializeRTB;
-            chatControlLeft.insertAfter(tableNode, chatControlLeftNode);
+            chatControl.insertBefore(tableNode, chatControlSecondChild);
         }
     }
 
