@@ -3,8 +3,8 @@ class RTB extends Application {
         super(options);
     }
 
-    _openDialog(folder = null) {
-        RTB.openDialog(folder);
+    _openDialog() {
+        RTB.openDialog();
     }
     /**
      * Opens dialog menu for selecting roll tables
@@ -116,7 +116,7 @@ class RTB extends Application {
             (b) => b.name === rollTableName
         );
 
-        if (rollTable.data.results.length > 0) {
+        if (rollTable.data.results.length == 1) {
             const r = rollTable.roll();
             const result = r.results[0];
             const roll = r.roll;
@@ -147,6 +147,8 @@ class RTB extends Application {
                 });
             }
             return result;
+        } else { 
+            rollTable.toMessage(rollTable.results, rollTable.roll())
         }
     }
 

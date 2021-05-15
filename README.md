@@ -102,6 +102,7 @@ This module adds a convenient way to draw from RollTables. Great for critical hi
 * Fixed nested folders.
 * Cleaned up source code, removed JQuery dependency.
 * Spanish language localization (thanks to @lozalojo).
+* Fixed tables with multiple outcomes for the same roll (thanks to jangowolf#7167)
 
 ### License
 
