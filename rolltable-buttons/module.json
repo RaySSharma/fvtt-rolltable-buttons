@@ -2,7 +2,7 @@
   "name": "rolltable-buttons",
   "title": "RollTable Buttons",
   "description": "This module adds a convenient way to draw from RollTables",
-  "version": "1.1.7",
+  "version": "1.2.0",
   "author": "RaySSharma",
   "scripts": ["./scripts/RTB.js"],
   "languages": [
@@ -19,9 +19,9 @@
   ],
   "styles": ["./css/rolltable-buttons.css"],
   "packs": [],
-  "minimumCoreVersion": "0.7.4",
-  "compatibleCoreVersion": "0.7.5",
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.7.9",
   "url": "https://github.com/RaySSharma/fvtt-rolltable-buttons",
   "manifest": "https://raw.githubusercontent.com/RaySSharma/fvtt-rolltable-buttons/master/rolltable-buttons/module.json",
-  "download": "https://github.com/RaySSharma/fvtt-rolltable-buttons/archive/v1.1.7.zip"
+  "download": "https://github.com/RaySSharma/fvtt-rolltable-buttons/archive/v1.2.0.zip"
 }

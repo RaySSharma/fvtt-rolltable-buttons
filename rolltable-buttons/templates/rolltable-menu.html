@@ -1,7 +1,13 @@
 <div id="RTB-menu">
     {{#each data}}
-        {{#if this.folder}}
-            <button onclick="RTB._openFolder({{{json this.content}}})" class="RTB-entry" style="background-color:{{this.data.color}}"><i style="float:left;" class="fa fa-folder"></i>{{this.name}}</button>
+        {{#if this.isFolder}}
+            <button onclick="RTB._openFolder({{{json this}}})" class="RTB-entry RTB-entry-folder" style="background-color:{{this.data.color}}">
+                
+                <div class='RTB-entry-text'>
+                    <i class="fa fa-folder"></i>
+                    {{this.name}}
+                </div>
+            </button>
         {{else}}
             <button onclick="RTB.draw({{{json this.name}}})" class="RTB-entry">{{this.name}}</button>
         {{/if}}

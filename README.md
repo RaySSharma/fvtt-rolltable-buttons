@@ -1,8 +1,8 @@
 ## RollTable Buttons
 
 * **Author:** RaySSharma#4736
-* **Version:** 1.1.6
-* **Foundry VTT Compatibility:** 0.7.5+
+* **Version:** 1.2.0
+* **Foundry VTT Compatibility:** 0.7.9+
 * **Module Requirement(s):** None
 * **Module Conflicts:** None
 * **Translation Support**: en
@@ -95,6 +95,13 @@ This module adds a convenient way to draw from RollTables. Great for critical hi
 * Fixed handling of permissions (thanks to DoubleR#1944).
 * Updated rolling mechanism to account for API changes
 * Moved up requirements to FVTT 0.7.4+
+
+#### 1.2.0
+
+* Shrunk button size.
+* Fixed nested folders.
+* Cleaned up source code, removed JQuery dependency.
+* Spanish language localization (thanks to @lozalojo).
 
 ### License
 
