@@ -1,5 +1,5 @@
 #chat-controls .fa-bullseye:hover {
-    color: #ff9898;
+    color: #ff6400;
 }
 
 #chat-controls .RTB-control-icon {
@@ -10,11 +10,14 @@
 #RTB-menu .RTB-entry {
     background-color: rgba(0,0,0,0.8);
     color: #f0f0e0;
-    padding: 10px;
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 14px;
+    margin: 2px;
     border: 1px solid #111111;
     cursor: pointer;
+}
+
+#RTB-menu .RTB-entry-text {
+    margin: auto;
 }
 
 #RTB-menu .RTB-entry:hover, .RTB-entry:focus {
