@@ -30,23 +30,31 @@ class RTB extends Application {
     /**
      * Generate list of objects to display in Dialog
      *
-     * @param {String} folder
+     * @param {String} selectedFolder
      * @returns {Array}
      */
-    static fetch_dialog_list(templateData, folder) {
+    static fetch_dialog_list(templateData, selectedFolder) {
+
+        let hasPermission = (table) =>
+            table.data.permission[game.user.id] >=
+                CONST.ENTITY_PERMISSIONS.OBSERVER ||
+            table.data.permission.default >=
+                CONST.ENTITY_PERMISSIONS.OBSERVER ||
+            game.user.isGM;
+
         const tables = game.tables.filter(
-            (x) =>
-                x.data.displayRoll &&
-                x.folder == folder &&
-                (game.user.permission >= x.data.permission.default ||
-                    game.user.isGM)
+            (table) =>
+                table.data.displayRoll &&
+                table.folder == selectedFolder &&
+                hasPermission(table)
         );
         const folders = game.folders.filter(
-            (x) =>
-                x.data.type == "RollTable" &&
-                x.parent == folder &&
-                (game.user.permission >= x.permission || game.user.isGM)
+            (folder) =>
+                folder.data.type == "RollTable" &&
+                folder.parent == selectedFolder &&
+                folder.content.some((el) => hasPermission(el))
         );
+        game.folders.entries[0].content.forEach(function (el) {});
         tables.forEach(function (table) {
             let tableObj = Object.assign({}, table);
             tableObj.name = tableObj.data.name;
@@ -150,9 +158,9 @@ class RTB extends Application {
                 });
             }
             return result;
-        } else { 
-            const r = rollTable.roll()
-            rollTable.toMessage(r.results, r)
+        } else {
+            const r = rollTable.roll();
+            rollTable.toMessage(r.results, r);
         }
     }
 
@@ -200,17 +208,6 @@ class RTB extends Application {
     static _openFolder(folder) {
         folder = game.folders.filter((x) => x.id == folder.data._id)[0];
         RTB.openDialog(folder);
-        /**let folder = game.folders.entities.find(
-            (x) => x._id === data[0].folder
-        );
-        data.map((x) => (x.color = folder.data.color));
-        let html =
-            '{{#each data}}<button onclick="RTB.draw(' +
-            "'{{this.name}}')" +
-            '" class="RTB-entry" style="background-color:{{this.color}}">{{this.name}}</button>{{/each}}';
-        let template = Handlebars.compile(html);
-        let compiled = template({ data });
-        document.getElementById("RTB-menu").innerHTML = compiled;*/
     }
 }
 
