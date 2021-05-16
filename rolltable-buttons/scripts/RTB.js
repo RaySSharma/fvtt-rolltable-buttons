@@ -115,6 +115,9 @@ class RTB extends Application {
         const rollTable = game.tables.entities.find(
             (b) => b.name === rollTableName
         );
+        if (rollTable.data.results.length == 0) {
+            return;
+        }
 
         if (rollTable.data.results.length == 1) {
             const r = rollTable.roll();
@@ -148,7 +151,8 @@ class RTB extends Application {
             }
             return result;
         } else { 
-            rollTable.toMessage(rollTable.results, rollTable.roll())
+            const r = rollTable.roll()
+            rollTable.toMessage(r.results, r)
         }
     }
 

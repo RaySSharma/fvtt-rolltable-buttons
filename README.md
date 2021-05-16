@@ -1,7 +1,7 @@
 ## RollTable Buttons
 
 * **Author:** RaySSharma#4736
-* **Version:** 1.2.1
+* **Version:** 1.2.2
 * **Foundry VTT Compatibility:** 0.7.9+
 * **Module Requirement(s):** None
 * **Module Conflicts:** None
