@@ -54,7 +54,6 @@ class RTB extends Application {
                 folder.parent == selectedFolder &&
                 folder.content.some((el) => hasPermission(el))
         );
-        game.folders.entries[0].content.forEach(function (el) {});
         tables.forEach(function (table) {
             let tableObj = Object.assign({}, table);
             tableObj.name = tableObj.data.name;
@@ -240,7 +239,7 @@ class RTBControl {
 }
 
 Handlebars.registerHelper("json", function (context) {
-    return JSON.stringify(context).replace(/"/g, "&quot;");
+    return JSON.stringify(context);
 });
 
-Hooks.on("ready", RTBControl.addChatControl);
+Hooks.on("renderChatLog", RTBControl.addChatControl);

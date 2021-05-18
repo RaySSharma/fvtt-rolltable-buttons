@@ -1,7 +1,7 @@
 ## RollTable Buttons
 
 * **Author:** RaySSharma#4736
-* **Version:** 1.2.3
+* **Version:** 1.2.4
 * **Foundry VTT Compatibility:** 0.7.9+
 * **Module Requirement(s):** None
 * **Module Conflicts:** None
@@ -107,6 +107,7 @@ This module adds a convenient way to draw from RollTables. Great for critical hi
 * Fixed permission handling (thanks to ngPesado)
   * By default in FVTT, player requires "observer" to roll a table
   * Players now require "observer" to see a table in RTB
+* Fixed Handlebars function calls
 
 ### License
 
