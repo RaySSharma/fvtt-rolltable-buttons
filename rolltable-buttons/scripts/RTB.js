@@ -55,16 +55,10 @@ class RTB extends Application {
                 folder.content.some((el) => hasPermission(el))
         );
         tables.forEach(function (table) {
-            let tableObj = Object.assign({}, table);
-            tableObj.name = tableObj.data.name;
-            tableObj.isFolder = false;
-            templateData.data.push(tableObj);
+            templateData.data.push({ name: table.data.name, isFolder: false, data: table.data, ...table });
         });
         folders.forEach(function (folder) {
-            let folderObj = Object.assign({}, folder);
-            folderObj.name = folderObj.data.name;
-            folderObj.isFolder = true;
-            templateData.data.push(folderObj);
+            templateData.data.push({ name: folder.data.name, isFolder: true, data: folder.data, ...folder });
         });
         return templateData;
     }
@@ -118,7 +112,7 @@ class RTB extends Application {
      * @returns
      * @memberof RTB
      */
-    static draw(rollTableName) {
+    static async draw(rollTableName) {
         const rollTable = game.tables.entities.find(
             (b) => b.name === rollTableName
         );
@@ -158,7 +152,7 @@ class RTB extends Application {
             }
             return result;
         } else {
-            const r = rollTable.roll();
+            const r = await rollTable.roll();
             rollTable.toMessage(r.results, r);
         }
     }
